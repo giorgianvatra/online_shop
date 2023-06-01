@@ -95,3 +95,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+.carts-container{ 
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem; 
+  position: relative; 
+  width: 100vw;
+  justify-items: center;
+ 
+}

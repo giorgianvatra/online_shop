@@ -6,7 +6,7 @@ console.log(getProducts());
 
 window.addEventListener("DOMContentLoaded", async () => {
   const products = await getProducts();
-   document.querySelector(".carts-container").innerHTML = await products
-     .map((product) => createCarts(product))
+  document.querySelector(".carts-container").innerHTML = await products
+     .map((product) =>  createCarts(product))
      .join("");
 });
