@@ -1,5 +1,5 @@
 export const createCarts = async (product) => {
-   
+  return
        `
     <div class="cart">
         <img src="${product.image}"/>

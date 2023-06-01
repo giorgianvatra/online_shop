@@ -1,0 +1,1 @@
+export const URL = "https://64778e969233e82dd53bd7c8.mockapi.io/onlineShop";
