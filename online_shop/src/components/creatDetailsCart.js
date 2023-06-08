@@ -9,11 +9,15 @@ export const createDetailCart = (product) => {
             <p>${product.description}</p>
             <p class="product-price">${product.productPrice}</p>
             <p class="product-disponibility">In Stock: <span id="inStock">${product.stock}</span> buc.</p>
-            <div class="quantity">
-                <p>Quantity</p>
-                <input  type="number" placeholder="Quantity" class="quantity-input"> 
-            </div>
+        
             <button class="add-to-cart">Add to cart</button>
    
         `;
 };
+
+// <div class="quantity">
+// <p>Quantity</p>
+// <button class="decrement-button">-</button>
+// <span class="amount">0</span>
+// <button class="increment-button">+</button>
+// </div>;
