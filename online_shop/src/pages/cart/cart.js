@@ -31,7 +31,7 @@ document.querySelector("#cart").addEventListener("click", (e) => {
   const parent = button.closest(".quantity");
 
   if (button.classList.contains("increment-button")) {
-    cart.forEach((item) => {
+    cart.forEach((item ) => {
       if (parent && parent.classList.contains(item.id)) {
         item.quantity++;
         localStorage.setItem("cart", JSON.stringify(cart));
@@ -39,12 +39,12 @@ document.querySelector("#cart").addEventListener("click", (e) => {
       }
     });
   } else if (button.classList.contains("decrement-button")) {
-    cart.forEach((item) => {
+    cart.forEach((item, index) => {
       if (parent && parent.classList.contains(item.id)) {
         item.quantity--;
         if ((item.quantity <= 0)) {
-          const remover = 0; 
-          cart.filetr((itemToRemove))
+          cart.splice(index, 1)
+          parent.closest(".product-in-cart").style.display = 'none';
         }
         localStorage.setItem("cart", JSON.stringify(cart));
         parent.querySelector(".amount").innerHTML = item.quantity;
