@@ -1,0 +1,29 @@
+#cart { 
+    display: flex; 
+    flex-direction: column;
+   
+}
+
+.product-in-cart{ 
+    display: flex;
+    justify-content: space-between;
+    width: 100vw; 
+    position: relative;
+    gap: 2rem;
+    padding:  1rem 5rem; 
+}
+
+.product-in-cart img{ 
+    height: 5rem;
+    width: 5rem;
+}
+
+.quantity { 
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+    right: 15%
+
+}

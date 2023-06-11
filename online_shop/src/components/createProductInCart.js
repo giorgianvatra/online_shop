@@ -1,6 +1,6 @@
 import "./style.css"
 
-export const createProductInCart = () => {
+export const createProductInCart = (product) => {
     return `
     <div class="product-in-cart">
     <img src=${product.image}>
