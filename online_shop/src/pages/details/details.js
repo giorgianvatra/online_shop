@@ -1,6 +1,7 @@
 import { createDetailCart } from "../../components/creatDetailsCart";
 import { getProductByID } from "../../api/getProductByID";
 import { addProductToCart } from "../../utils/cart";
+import "./style.css"
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -16,38 +17,22 @@ window.addEventListener("load", async () => {
 document.querySelector(".cart-by-id").addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart")) {
     addProductToCart(productId);
+    
   }
+  addTocartMessage()
 });
 
-// adding element in cart /  local storage / increment
+async function addTocartMessage(){
+  const productName = document.querySelector(".name");
+  const product = await getProductByID(productId);
 
-// document.querySelector(".cart-by-id").addEventListener("click", (e) => {
-//   if (e.target.classList.contains("increment-button")) {
-//     let quantity = localStorage.getItem(productId);
-//     if (quantity != undefined) {
-//       let increment = Number(JSON.parse(quantity) + 1);
-//       localStorage.setItem(productId, increment);
-//     } else {
-//       localStorage.setItem(productId, 1);
-//     }
+  productName.innerHTML = product.productName; 
 
-//   }
-// });
+  let message = document.querySelector(".message");
+  message.style.display = "block";
+  productName.style.fontWeight = "bold";
 
-// decrement elements / remove
-
-// document.querySelector(".cart-by-id").addEventListener("click", (e) => {
-//   if (e.target.classList.contains("decrement-button")) {
-//     let quantity = localStorage.getItem(productId);
-
-//     if (quantity < 1) {
-//       localStorage.removeItem(productId);
-
-//     } else if (quantity != undefined) {
-//       let increment = Number(JSON.parse(quantity) - 1);
-//       localStorage.setItem(productId, increment);
-//     }
-
-//   }
-
-// });
+  setTimeout(function() {
+    message.style.display = "none";
+  }, 2000)
+}
