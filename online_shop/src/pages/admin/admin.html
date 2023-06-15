@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin page</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="navbar">
-			<div>
-				<a href="../../../index.html">Home</a>
-				<a href="../cart/cart.html">Cart</a>
-				<a href="../admin/admin.html">Admin</a>
-			</div>
-		</div>
-		<h1>Admin page</h1>
-    
-</body>
+      <div>
+        <a href="../../../index.html">Home</a>
+        <a href="../cart/cart.html">Cart</a>
+        <a href="../admin/admin.html">Admin</a>
+      </div>
+    </div>
+   
+    <div class="add-product-buttons">
+      <h1>Add product</h1>
+      <button class="add-new-product-btn">+ Add new product</button>
+    </div>
+    <table class="products-list">
+      <tr class="table-referinces">
+        <th>Image</th>
+        <th>Name</th>
+		<th>Price</th>
+        <th>Stock</th>
+		<th></th>
+      </tr>
+    </table>
+
+	<script type="module" src="admin.js"></script>
+  </body>
 </html>

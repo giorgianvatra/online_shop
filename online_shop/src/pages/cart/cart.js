@@ -22,7 +22,7 @@ window.addEventListener("load", async () => {
         <button class="decrement-button">-</button>
         <span class="amount">${product.quantity}</span>
         <button class="increment-button ">+</button>
-        <button class="delete-button">Remove all</button>
+        <button class="delete-button">Remove</button>
     </div>;
           
     </div>`)
@@ -98,3 +98,17 @@ function updateNoOfItemsInCart() {
     document.getElementById("noItems").innerHTML = sum;
   });
 }
+
+
+document.getElementById("finishOrder").addEventListener("click", ()=> {
+    document.getElementById("cart").style.display = "none";
+    document.querySelector(".total-and-buy").style.display = "none";
+     document.querySelector(".thank-you-poust").style.display = "flex";
+    setTimeout(function () {
+     window.location.href = "/index.html"
+    }, 1000);
+
+    localStorage.removeItem("cart");
+
+    updateNoOfItemsInCart();
+})

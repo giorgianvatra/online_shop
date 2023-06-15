@@ -29,3 +29,12 @@
 
 }
 
+.thank-you-poust{ 
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    margin: 2rem;
+    display: none;
+}
