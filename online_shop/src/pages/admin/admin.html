@@ -14,21 +14,79 @@
         <a href="../admin/admin.html">Admin</a>
       </div>
     </div>
-   
-    <div class="add-product-buttons">
-      <h1>Add product</h1>
-      <button class="add-new-product-btn">+ Add new product</button>
+    <div class="container">
+      <div class="add-product-buttons">
+        <h1>Add product</h1>
+        <button class="add-new-product-btn">+ Add new product</button>
+      </div>
+      <div class="table-container">
+        <table class="products-list">
+          <tr class="table-referinces">
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th></th>
+          </tr>
+        </table>
+      </div>
     </div>
-    <table class="products-list">
-      <tr class="table-referinces">
-        <th>Image</th>
-        <th>Name</th>
-		<th>Price</th>
-        <th>Stock</th>
-		<th></th>
-      </tr>
-    </table>
+    <!-- Edit porduct -->
+    <div id="edit-product">
+      <div class="edit-buttons-section">
+        <h1>Edit product</h1>
+        <button id="edit">Edit</button>
+        <button class="cancel-edit">Cancel</button>
+      </div>
+      <div>
+        <label for="edit-image">Image</label>
+        <input type="text" id="edit-image" />
+      </div>
+      <div>
+        <label for="edit-name">Name</label> <input type="text" id="edit-name" />
+      </div>
+      <div>
+        <label for="edit-price">Price</label>
+        <input type="text" id="edit-price" />
+      </div>
+      <div>
+        <label for="edit-description">Description</label>
+        <input type="text" id="edit-decription" />
+      </div>
+      <div>
+        <label for="edit-stock">Stock</label>
+        <input type="text" id="edit-stock" />
+      </div>
+    </div>
 
-	<script type="module" src="admin.js"></script>
+    <!-- Add porduct -->
+    <div id="add-product">
+      <div class="add-buttons-section">
+        <h1>Edit product</h1>
+        <button id="add">Edit</button>
+        <button class="cancel-adding">Cancel</button>
+      </div>
+      <div>
+        <label for="add-image">Image</label>
+        <input type="text" id="add-image" />
+      </div>
+      <div>
+        <label for="add-name">Name</label> <input type="text" id="add-name" />
+      </div>
+      <div>
+        <label for="add-price">Price</label>
+        <input type="text" id="add-price" />
+      </div>
+      <div>
+        <label for="add-description">Description</label>
+        <input type="text" id="add-decription" />
+      </div>
+      <div>
+        <label for="add-stock">Stock</label>
+        <input type="text" id="add-stock" />
+      </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
   </body>
 </html>

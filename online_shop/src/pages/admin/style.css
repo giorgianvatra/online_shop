@@ -37,3 +37,16 @@
     height: 75px;
 
 }
+.table-container{ 
+    
+}
+
+#edit-product{ 
+    display: none;
+
+}
+
+#add-product{ 
+    display: none;
+
+}
