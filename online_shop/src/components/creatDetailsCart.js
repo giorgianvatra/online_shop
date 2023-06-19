@@ -3,7 +3,7 @@ import "./style.css";
 export const createDetailCart = (product) => {
   return ` 
   
-        <img src=${product.image}/>
+        <img src=${product.image}>
         <div class="cart-shopping-detail">
             <p class="product-name">${product.productName}</p>
             <p>${product.description}</p>

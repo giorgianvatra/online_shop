@@ -3,6 +3,7 @@ import { getProducts } from "../../api/getProducts";
 import { createAdminProductSection } from "../../components/createAdminProductSection";
 import { removeProductByID } from "../../api/removeProductByID";
 import { getProductByID } from "../../api/getProductByID";
+import { URL } from "../../constants";
 
 window.addEventListener("DOMContentLoaded", async () => {
   const products = await getProducts();
@@ -15,6 +16,7 @@ document
   .querySelector(".products-list")
   .addEventListener("click", async (e) => {
     //removing product
+    e.preventDefault();
 
     if (e.target.classList.contains("remove-btn")) {
       e.target.parentNode.parentNode.remove();
@@ -31,50 +33,68 @@ document
       const products = await getProducts();
       let update = products.map((product) => {
         if ("p" + product.id === e.target.id) {
-          document.getElementById("add-product").style.display = "block";
+          document.getElementById("edit-product").style.display = "block";
           document.querySelector(".container").style.display = "none";
-          const addBtn = document.getElementById("add");
-          addBtn.addEventListener("click", () => {
-            addProduct(product.id);
-          });
+          //edit btn
+          document
+            .getElementById("edit-product")
+            .addEventListener("click", async (e) => {
+              e.preventDefault();
+              if (e.target.classList.contains("edit-btn")) {
+                editProduct(product.id);
+              }
+            });
         }
       });
     }
   });
 
-function addProduct(id) {
+function editProduct(id) {
   const imageValue = document.getElementById("edit-image").value;
   const nameValue = document.getElementById("edit-name").value;
   const priceValue = document.getElementById("edit-price").value;
   const descriptionValue = document.getElementById("edit-decription").value;
   const stokValue = document.getElementById("edit-stock").value;
 
-  if (nameValue.trim !== "") {
-    console.log(id, nameValue);
+  // update name
+  if (nameValue.trim() !== "") {
+    
+    fetch(URL + `/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        productName: nameValue,
+      }),
+    });
+  }
+
+  // update image
+  if (imageValue.trim() !== "") {
+    console.log(imageValue)
+    fetch(URL + `/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        image: imageValue,
+      }),
+    });
   }
 }
 
 // Update product functions
-function updateImage(id, body) {
-  fetch(URL + `/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      image: body,
-    }),
-  });
-}
 
-function updateName(id, body) {
+function updateImage(id, content) {
   fetch(URL + `/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      productName: body,
+      image: content,
     }),
   });
 }
