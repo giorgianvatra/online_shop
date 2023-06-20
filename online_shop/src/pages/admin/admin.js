@@ -41,7 +41,8 @@ document
             .addEventListener("click", async (e) => {
               e.preventDefault();
               if (e.target.classList.contains("edit-btn")) {
-                editProduct(product.id);
+                await editProduct(product.id);
+                location.reload();
               }
             });
         }
@@ -49,7 +50,7 @@ document
     }
   });
 
-function editProduct(id) {
+async function editProduct(id) {
   const imageValue = document.getElementById("edit-image").value;
   const nameValue = document.getElementById("edit-name").value;
   const priceValue = document.getElementById("edit-price").value;
@@ -58,8 +59,7 @@ function editProduct(id) {
 
   // update name
   if (nameValue.trim() !== "") {
-    
-    fetch(URL + `/${id}`, {
+    await fetch(URL + `/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -72,8 +72,8 @@ function editProduct(id) {
 
   // update image
   if (imageValue.trim() !== "") {
-    console.log(imageValue)
-    fetch(URL + `/${id}`, {
+    console.log(imageValue);
+    await fetch(URL + `/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -83,54 +83,107 @@ function editProduct(id) {
       }),
     });
   }
+  // update description
+  if (descriptionValue.trim() !== "") {
+    console.log(descriptionValue);
+    await fetch(URL + `/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        description: descriptionValue,
+      }),
+    });
+  }
+
+  // update price
+  if (priceValue.trim() !== "") {
+    console.log(priceValue);
+    await fetch(URL + `/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        productPrice: priceValue,
+      }),
+    });
+  }
+
+  // update stock
+  if (stokValue.trim() !== "") {
+    console.log(stokValue);
+    await fetch(URL + `/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        stock: Number(stokValue),
+      }),
+    });
+  }
 }
 
-// Update product functions
+document
+  .querySelector(".add-product-btn")
+  .addEventListener("click", async (e) => {
+    if(e.target.classList.contains("add-new-product-btn")){
+      document.getElementById("add-product").style.display = "block";
+      document.querySelector(".container").style.display = "none";
+    
+    }
+  })
 
-function updateImage(id, content) {
-  fetch(URL + `/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      image: content,
-    }),
-  });
+  document.getElementById("add-product").addEventListener("click", updateImput);
+async function updateImput(e) {
+  const target = e.target;
+  let imageValue = document.getElementById("add-image").value.trim();
+  let nameValue = document.getElementById("add-name").value.trim();
+  let priceValue = document.getElementById("add-price").value.trim();
+  let descriptionValue = document
+    .getElementById("add-decription")
+    .value.trim();
+  let stokValue = document.getElementById("add-stock").value;
+
+  if (target.classList.contains("add-product-btn-imput")) {
+    if (
+      imageValue === "" ||
+      stokValue === "" ||
+      descriptionValue === "" ||
+      nameValue === "" ||
+      priceValue == ""
+    ) {
+      document.getElementById("add").disabled = true;
+      setTimeout(() => {
+        document.getElementById("add").disabled = false;
+      }, 2000);
+    } else {
+      await fetch(URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          productName: nameValue,
+          image: imageValue,
+          description: descriptionValue,
+          productPrice: priceValue,
+          stock: stokValue,
+        }),
+      });
+      location.reload();
+    }
+  }
+  if(target.classList.contains("cancel-adding")){ 
+    document.getElementById("add-product").style.display = "none";
+    document.querySelector(".container").style.display = "block";
+    document.getElementById("add-image").value = "";  
+    document.getElementById("add-name").value = "";
+    document.getElementById("add-price").value = "";
+    document.getElementById("add-decription").value = "";
+    document.getElementById("add-stock").value = "";
+  }
 }
 
-function updateDescription(id, body) {
-  fetch(URL + `/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      description: body,
-    }),
-  });
-}
-
-function updatePrice(id, body) {
-  fetch(URL + `/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      productPrice: body,
-    }),
-  });
-}
-
-function updateStock(id, body) {
-  fetch(URL + `/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      stock: body,
-    }),
-  });
-}
