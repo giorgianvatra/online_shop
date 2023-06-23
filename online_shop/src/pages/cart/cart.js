@@ -16,17 +16,17 @@ window.addEventListener("load", async () => {
     <img src=${productInfo.image}>
     <div class="quantity ${product.id}">
         <p><a href="http://localhost:5173/src/pages/details/details.html?id=${product.id}">${productInfo.productName}</a></p>
-        <p>${productInfo.productPrice} RON</p>
+        <p>$${productInfo.productPrice}.00</p>
     
         <p >Quantity</p>
         <button class="decrement-button">-</button>
-        <span class="amount">${product.quantity}</span>
+        <span class="amount">${product.quantity} items</span>
         <button class="increment-button ">+</button>
-        <button class="delete-button">Remove</button>
+        <button class="delete-button"><i class="fa-solid fa-trash"></i> Remove </button>
     </div>;
           
     </div>`)
-    );
+    )
   });
 });
 
@@ -40,7 +40,7 @@ document.querySelector("#cart").addEventListener("click", (e) => {
       if (parent && parent.classList.contains(item.id)) {
         item.quantity++;
         localStorage.setItem("cart", JSON.stringify(cart));
-        parent.querySelector(".amount").innerHTML = item.quantity;
+        parent.querySelector(".amount").innerHTML = item.quantity + " items";
       }
     });
   } else if (button.classList.contains("decrement-button")) {
@@ -53,7 +53,7 @@ document.querySelector("#cart").addEventListener("click", (e) => {
           document.getElementById("total").innerHTML = 0;
         }
         localStorage.setItem("cart", JSON.stringify(cart));
-        parent.querySelector(".amount").innerHTML = item.quantity;
+        parent.querySelector(".amount").innerHTML = item.quantity + " items";
       }
     });
   } else if (e.target.classList.contains("delete-button")) {
@@ -82,7 +82,7 @@ function updateTotal() {
     const product = getProductByID(response.id).then((product) => {
       if (localStorage.getItem("cart") !== []) {
         sum += Number(product.productPrice) * response.quantity;
-        document.getElementById("total").innerHTML = sum;
+        document.getElementById("total").innerHTML = sum + ".00";
       } else {
         document.getElementById("total").innerHTML = 0;
       }

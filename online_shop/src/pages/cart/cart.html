@@ -6,21 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product</title>
     <link rel="stylesheet" href="./style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+      <script src="https://kit.fontawesome.com/43d3d6bcaa.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
-      <div class="navbar">
-        <div>
-          <a href="../../../index.html">Home</a>
-          <a href="../cart/cart.html">Cart</a>
-          <a href="../admin/admin.html">Admin</a>
+       <div class="navbar">
+        <h1 class="logo">VG Music Store</h1>
+        
+        <div class="links">
+          <a href="../../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+          <a href="../admin/admin.html"><i class="fa-solid fa-lock"></i> Admin</a>
         </div>
       </div>
       <div id="cart"></div>
     </div>
     <div class="total-and-buy">
       <h3>No. items: <span id="noItems"></span></h3>
-      <h2>Total: <span id="total">0</span> RON</h2>
+      <h2>Total: $<span id="total">0</span></h2>
       <button id="finishOrder">Proceed to check out</button>
     </div>
 

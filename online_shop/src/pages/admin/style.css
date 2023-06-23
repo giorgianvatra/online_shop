@@ -1,3 +1,47 @@
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Prompt", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 2px solid orange;
+  padding: 0;
+}
+
+.logo {
+  font-family: "Pacifico", cursive;
+  color: orange;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.links a {
+  color: black;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.links a:hover {
+  color: orange;
+  border-bottom: 3px solid orange;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,10 +49,31 @@
   align-items: center;
   position: relative;
 }
-.add-product-buttons {
+.add-product-btn {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: end;
+  gap: 1.5rem;
+  margin: 2rem 3rem;
+}
+
+.add-new-product-btn,
+.remove-btn {
+  color: orange;
+  background-color: transparent;
+  font-weight: 700;
+  padding: 7.5px 15px;
+  border-radius: 7px;
+  border: 1px solid orange;
+  transition: 0.22s;
+  cursor: pointer;
+}
+.add-new-product-btn:hover,
+.remove-btn:hover {
+  background-color: orange;
+  color: white;
 }
 
 .products-list {
@@ -19,20 +84,92 @@
 }
 
 .table-referinces {
-  background-color: rgba(128, 128, 128, 0.551);
+  background-color: orange;
   margin-bottom: 1rem;
+  color: white;
+}
+
+.table-referinces th {
+  padding: 1rem;
 }
 .product-details {
   text-align: center;
+  height: 100px;
+  border-bottom: 1px solid orange;
 }
 .product-details img {
   height: 75px;
 }
 
-#edit-product {
-  display: none;
+.update-product {
+  text-decoration: none;
+  font-weight: 700;
+  color: black;
+  transition: 0.33s;
+}
+
+.update-product:hover {
+  color: orange;
+}
+
+#edit-product,
+#add-product {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  padding: 2rem;
+  width: 300px;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.spacing {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+.spacing input {
+  width: 200px;
+  height: 25px;
+
+  border-radius: 5px;
+}
+.spacing input {
+  border: 2px solid orange;
+}
+
+#edit,
+.cancel-edit,
+#add,
+.cancel-adding {
+  color: orange;
+  background-color: transparent;
+  font-weight: 700;
+  padding: 7.5px 15px;
+  border-radius: 7px;
+  border: 1px solid orange;
+  transition: 0.22s;
+  cursor: pointer;
+}
+
+#edit:hover,
+.cancel-edit:hover,
+#add:hover,
+.cancel-adding:hover {
+  background-color: orange;
+  color: white
 }
 
 #add-product {
+  display: none;
+}
+#edit-product {
   display: none;
 }

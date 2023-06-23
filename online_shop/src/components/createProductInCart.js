@@ -1,17 +1,17 @@
-import "./style.css"
+import "./style.css";
 
 export const createProductInCart = (product) => {
-    return `
+  return `
     <div class="product-in-cart">
     <img src=${product.image}>
     <p>${product.productName}</p>
-    <p>${product.price}</p>
+    <p>${product.price}.00 </p>
     <div class="quantity">
         <p>Quantity</p>
-        <button class="decrement-button">-</button>
-        <span class="amount">0</span>
         <button class="increment-button">+</button>
+        <span class="amount">0</span>
+        <button class="decrement-button">-</button>
     </div>;
     </div>
-    `;
-}
+    `
+};

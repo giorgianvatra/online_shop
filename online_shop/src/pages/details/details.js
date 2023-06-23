@@ -17,9 +17,9 @@ window.addEventListener("load", async () => {
 document.querySelector(".cart-by-id").addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart")) {
     addProductToCart(productId);
-    
+    addTocartMessage();
   }
-  addTocartMessage()
+  
 });
 
 async function addTocartMessage(){

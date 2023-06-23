@@ -4,12 +4,19 @@ import { createAdminProductSection } from "../../components/createAdminProductSe
 import { removeProductByID } from "../../api/removeProductByID";
 import { getProductByID } from "../../api/getProductByID";
 import { URL } from "../../constants";
+import { getProductsDescending } from "../../api/getProductsInDescendingOrder";
+
 
 window.addEventListener("DOMContentLoaded", async () => {
-  const products = await getProducts();
+  // const products = await getProducts();
+  const products = await getProductsDescending(); 
+  console.log( await getProductsDescending())
   document.querySelector(".products-list").innerHTML += await products
     .map((product) => createAdminProductSection(product))
     .join("");
+
+  
+  
 });
 
 document
@@ -33,7 +40,7 @@ document
       const products = await getProducts();
       let update = products.map((product) => {
         if ("p" + product.id === e.target.id) {
-          document.getElementById("edit-product").style.display = "block";
+          document.getElementById("edit-product").style.display = "flex";
           document.querySelector(".container").style.display = "none";
           //edit btn
           document
@@ -130,7 +137,7 @@ document
   .querySelector(".add-product-btn")
   .addEventListener("click", async (e) => {
     if(e.target.classList.contains("add-new-product-btn")){
-      document.getElementById("add-product").style.display = "block";
+      document.getElementById("add-product").style.display = "flex";
       document.querySelector(".container").style.display = "none";
     
     }
@@ -182,7 +189,7 @@ async function updateImput(e) {
     document.getElementById("add-image").value = "";  
     document.getElementById("add-name").value = "";
     document.getElementById("add-price").value = "";
-    document.getElementById("add-decription").value = "";
+    document.getElementById("add-decription") = "";
     document.getElementById("add-stock").value = "";
   }
 }

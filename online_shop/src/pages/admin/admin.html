@@ -5,18 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin page</title>
+     <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+      <script src="https://kit.fontawesome.com/43d3d6bcaa.js" crossorigin="anonymous"></script>   
   </head>
   <body>
-    <div class="navbar">
-      <div>
-        <a href="../../../index.html">Home</a>
-        <a href="../cart/cart.html">Cart</a>
-        <a href="../admin/admin.html">Admin</a>
+     <div class="navbar">
+        <h1 class="logo">VG Music Store</h1>
+        
+        <div class="links">
+          <a href="../../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="../cart/cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+          <a href="admin.html"><i class="fa-solid fa-lock"></i> Admin</a>
+        </div>
       </div>
-    </div>
     <div class="container">
       <div class="add-product-btn">
-        <h1>Add product</h1>
+        
         <button class="add-new-product-btn">+ Add new product</button>
       </div>
       <div class="table-container">
@@ -38,22 +47,22 @@
         <button id="edit" class="edit-btn">Edit</button>
         <button class="cancel-edit">Cancel</button>
       </div>
-      <div>
+      <div class="spacing">
         <label for="edit-image">Image</label>
         <input type="text" id="edit-image" />
       </div>
-      <div>
+      <div class="spacing">
         <label for="edit-name">Name</label> <input type="text" id="edit-name" />
       </div>
-      <div>
+      <div class="spacing">
         <label for="edit-price">Price</label>
         <input type="text" id="edit-price" />
       </div>
-      <div>
+      <div class="spacing">
         <label for="edit-description">Description</label>
         <input type="text" id="edit-decription" />
       </div>
-      <div>
+      <div class="spacing">
         <label for="edit-stock">Stock</label>
         <input type="text" id="edit-stock" />
       </div>
@@ -66,22 +75,22 @@
         <button id="add" class="add-product-btn-imput">Add</button>
         <button class="cancel-adding">Cancel</button>
       </div>
-      <div>
+      <div class="spacing">
         <label for="add-image">Image</label>
         <input type="text" id="add-image">
       </div>
-      <div>
+      <div class="spacing">
         <label for="add-name">Name</label> <input type="text" id="add-name" />
       </div>
-      <div>
+      <div class="spacing">
         <label for="add-price">Price</label>
         <input type="text" id="add-price" />
       </div>
-      <div>
+      <div class="spacing">
         <label for="add-description">Description</label>
         <input type="text" id="add-decription" />
       </div>
-      <div>
+      <div class="spacing">
         <label for="add-stock">Stock</label>
         <input type="text" id="add-stock" />
       </div>

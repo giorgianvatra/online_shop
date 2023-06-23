@@ -1,40 +1,183 @@
-#cart { 
-    display: flex; 
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Prompt", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 2px solid orange;
+  padding: 0;
+}
+
+.logo {
+  font-family: "Pacifico", cursive;
+  color: orange;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.links a {
+  color: black;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.links a:hover {
+  color: orange;
+  border-bottom: 3px solid orange;
+}
+
+#cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-in-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95vw;
+  position: relative;
+  gap: 2rem;
+  padding: 1rem 5rem;
+  border-bottom: 2px solid orange;
+}
+
+.product-in-cart img {
+  width: 200px;
+  height: 120px;
+}
+
+.quantity {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10%;
+}
+
+.quantity p a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.quantity p a:hover {
+  color: orange;
+}
+.decrement-button {
+  font-size: 2rem;
+}
+.increment-button {
+  font-size: 1.5rem;
+}
+
+.increment-button,
+.decrement-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.22s;
+}
+
+.increment-button:hover,
+.decrement-button:hover {
+  color: orange;
+}
+
+.thank-you-poust {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  margin: 2rem;
+  display: none;
+}
+
+.product-container {
+  display: none;
+}
+
+.delete-button {
+  color: orange;
+  background-color: transparent;
+  font-weight: 700;
+  padding: 7.5px 15px;
+  border-radius: 7px;
+  border: 1px solid orange;
+  transition: 0.22s;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: orange;
+  color: white;
+}
+
+.total-and-buy {
+  position: absolute;
+  right: 1%;
+  text-align: right;
+}
+.total-and-buy h3 {
+  margin: 1rem 0 0 0;
+}
+.total-and-buy h2 {
+  margin: 0;
+}
+#finishOrder {
+  display: inline-block;
+  color: orange;
+  background-color: transparent;
+  font-weight: 700;
+  padding: 7.5px 15px;
+  border-radius: 7px;
+  border: 1px solid orange;
+  transition: 0.22s;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+#finishOrder:hover {
+  background-color: orange;
+  color: white;
+}
+
+@media (max-width: 875px) {
+  .product-in-cart {
+    height: 400px;
+  }
+  .product-in-cart img{ 
+    height: 250px; 
+    width: 250px;
+  }
+
+  .quantity {
+    gap: 10px;
     flex-direction: column;
-   
-}
-
-.product-in-cart{ 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw; 
-    position: relative;
-    gap: 2rem;
-    padding:  1rem 5rem; 
-}
-
-.product-in-cart img{ 
-    height: 5rem;
-    width: 5rem;
-}
-
-.quantity { 
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    position: absolute; 
-    right: 25%
-
-}
-
-.thank-you-poust{ 
-    
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: aqua;
-    margin: 2rem;
-    display: none;
+  }
+  .quantity p,
+  .decrement-button,
+  .increment-button,
+  .amount {
+    margin: 0;
+  }
 }
