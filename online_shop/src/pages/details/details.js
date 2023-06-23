@@ -1,7 +1,7 @@
 import { createDetailCart } from "../../components/creatDetailsCart";
 import { getProductByID } from "../../api/getProductByID";
 import { addProductToCart } from "../../utils/cart";
-import "./style.css"
+
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -19,20 +19,19 @@ document.querySelector(".cart-by-id").addEventListener("click", (e) => {
     addProductToCart(productId);
     addTocartMessage();
   }
-  
 });
 
-async function addTocartMessage(){
+async function addTocartMessage() {
   const productName = document.querySelector(".name");
   const product = await getProductByID(productId);
 
-  productName.innerHTML = product.productName; 
+  productName.innerHTML = product.productName;
 
   let message = document.querySelector(".message");
   message.style.display = "block";
   productName.style.fontWeight = "bold";
 
-  setTimeout(function() {
+  setTimeout(function () {
     message.style.display = "none";
-  }, 2000)
+  }, 2000);
 }

@@ -24,7 +24,11 @@ export default defineConfig({
         "cart-html": resolve(__dirname, "src/pages/cart/cart.html"),
         details: resolve(__dirname, "src/pages/details/details.js"),
         "details-html": resolve(__dirname, "src/pages/details/details.html"),
+        
+          
+        }
       },
+  
     },
   },
-});
+);

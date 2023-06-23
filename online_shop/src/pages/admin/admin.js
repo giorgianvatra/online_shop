@@ -51,6 +51,10 @@ document
                 await editProduct(product.id);
                 location.reload();
               }
+              if(e.target.classList.contains("cancel-edit")){ 
+                document.getElementById("edit-product").style.display = "none";
+                document.querySelector(".container").style.display = "flex";
+              }
             });
         }
       });

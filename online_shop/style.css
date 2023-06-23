@@ -5,10 +5,7 @@
   font-family: "Prompt", sans-serif;
 }
 
-body{ 
-  width: 100vw; 
-  
-}
+
 
 #container {
   display: flex;
@@ -32,7 +29,7 @@ body{
   top: 0;
   background-color: white;
   z-index: 1;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   border-bottom: 2px solid orange; 
   padding: 0; 
@@ -82,7 +79,7 @@ body{
 .carts-container .cart {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 400px;  
  
  
 

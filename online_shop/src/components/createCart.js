@@ -1,4 +1,4 @@
-import "./style.css"
+
 
 export const createCarts =  (product) => {
   return ` <div class="cart">

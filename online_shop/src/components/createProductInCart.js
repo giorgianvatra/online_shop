@@ -1,4 +1,4 @@
-import "./style.css";
+
 
 export const createProductInCart = (product) => {
   return `
