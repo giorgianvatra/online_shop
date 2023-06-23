@@ -189,7 +189,7 @@ async function updateImput(e) {
     document.getElementById("add-image").value = "";  
     document.getElementById("add-name").value = "";
     document.getElementById("add-price").value = "";
-    document.getElementById("add-decription") = "";
+    document.getElementById("add-decription").value = "";
     document.getElementById("add-stock").value = "";
   }
 }
