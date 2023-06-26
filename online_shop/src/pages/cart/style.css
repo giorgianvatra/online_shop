@@ -51,11 +51,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95vw;
+  width: 95%;
   position: relative;
   gap: 2rem;
   padding: 1rem 5rem;
   border-bottom: 2px solid orange;
+  padding: 22px;
 }
 
 .product-in-cart img {
@@ -161,7 +162,7 @@
   color: white;
 }
 
-@media (max-width: 875px) {
+@media (max-width: 1000px) {
   .product-in-cart {
     height: 400px;
   }

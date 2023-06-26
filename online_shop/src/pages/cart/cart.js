@@ -23,7 +23,7 @@ window.addEventListener("load", async () => {
         <span class="amount">${product.quantity} items</span>
         <button class="increment-button ">+</button>
         <button class="delete-button"><i class="fa-solid fa-trash"></i> Remove </button>
-    </div>;
+    </div>
           
     </div>`)
     )
